@@ -40,10 +40,10 @@ const columnHandle = (column: JSX.Element[], style?: React.CSSProperties, itemst
         </div>
     )
 }
-export const NBLayout = (NBarr: JSX.Element[], style?: React.CSSProperties) => {
+export const NBLayout = (NBarr: JSX.Element[], style?: React.CSSProperties,className?:"string") => {
 
     return (
-        <div className="nb-root" 
+        <div className={className??"nb-root" }
         style={style}
         >
             {NBarr.map((ele, i) => React.cloneElement(ele, { key: i }))}

@@ -1,6 +1,6 @@
 {
   "name": "react-nblayout",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "",
   "homepage": "https://github.com/SGDS666/react-nblayout",
   "main": "./dist/NBlayout.js",

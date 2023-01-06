@@ -104,7 +104,7 @@ const Demo = () => {
             so no key needs to be passed
             */
         ],
-        {height:"100vh",background:"black"},
+        {height:"100vh",background:"black"},"myclass"
     )
 }
 ```
@@ -122,12 +122,12 @@ const Demo = () => {
 # 文档 document
 ### NBLayout 参数类型 Parameter Type
 ```typescript
-  NBLayout(NBarr: JSX.Element[], style?: React.CSSProperties | undefined): JSX.Element
+  NBLayout(NBarr: JSX.Element[], style?: React.CSSProperties | undefined,className?:string): JSX.Element
   
 ```
 
 ## NBlayout 基于flex布局  Based on flex layout
-接收2个参数  第二个为可选值
+接收3个参数  第2,第3个为可选值
 
 第一个参数是组件列表 只有一层 虽然看上去是多维数组 其实row col两个函数最终返回都都是单个组件
 
@@ -136,7 +136,7 @@ const Demo = () => {
    NBlayout([...arr]) || row([...arr]) || col([...arr])  返回值都是一个React组件
 ```
 
-Receive 2 parameters The second one is optional
+Receive the second of three parameters, and the third is an optional value
 
 The first parameter is that the component list has only one layer. 
 
@@ -165,6 +165,11 @@ type prompt
 
 It should be noted that the component array received by NBlayout row col will automatically fill in keys, 
 so whether you write one by one or use arr.map, you do not need to write keys=
+
+第三个参数为替换自定义类名 方便自定义样式 和容器内的row col 隔离其他nblayout
+
+The third parameter is to replace the custom class name to facilitate custom style 
+and row col in the container to isolate other nblayouts
 ## row&&col 
 ``` typescript
     row(arr: JSX.Element[], style?: React.CSSProperties | undefined, itemstyle?: React.CSSProperties | undefined): JSX.Element
@@ -226,17 +231,25 @@ you can refer to the writing method in the demo or directly add flex grow: 0 in 
 ## 通过css调整col row 基础样式
 如果通过NBlayout组装使用
 可使用以下方式的css选择器 修改row 以及col 的基础样式规则 
-如果是单独使用 col 或者 row 请找一个根结点类名或id替换 .nb-root
+如果是单独使用 col 或者 row 请找一个最近的父结点类名或id替换 .nb-root
+如果NBlayout调用时接收了第三个参数 将.nb-root 替换为你自定义的类名
 
 If used by NBlayout assembly
 The basic style rules of row and col can be modified using the css selector in the following ways
-If col or row is used alone, please find a root node class name or id to replace. nb root
+If col or row is used alone, please find the nearest parent node class name or id to replace. nb root
+If NBlayout receives the third parameter when calling, replace. nb root with your customized class name
 ```css
 .nb-root .nb-row{
 
 }
 .nb-root .nb-col{
 
+}
+.myclass .nb-row{
+
+}
+.myclass .nb-col{
+    
 }
 ```
 
