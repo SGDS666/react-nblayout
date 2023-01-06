@@ -25,7 +25,7 @@ var rowHandle = function (row, style, itemstyle) {
 var columnHandle = function (column, style, itemstyle) {
     return (react_1.default.createElement("div", { className: "nb-col", style: style }, column.map(function (r, i) { return react_1.default.cloneElement(r, itemstyle ? { key: i, style: itemstyle } : { key: i }); })));
 };
-var NBLayout = function (NBarr, style) {
-    return (react_1.default.createElement("div", { className: "nb-root", style: style }, NBarr.map(function (ele, i) { return react_1.default.cloneElement(ele, { key: i }); })));
+var NBLayout = function (NBarr, style, className) {
+    return (react_1.default.createElement("div", { className: className !== null && className !== void 0 ? className : "nb-root", style: style }, NBarr.map(function (ele, i) { return react_1.default.cloneElement(ele, { key: i }); })));
 };
 exports.NBLayout = NBLayout;

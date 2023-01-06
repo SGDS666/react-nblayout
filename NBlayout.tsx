@@ -40,7 +40,7 @@ const columnHandle = (column: JSX.Element[], style?: React.CSSProperties, itemst
         </div>
     )
 }
-export const NBLayout = (NBarr: JSX.Element[], style?: React.CSSProperties,className?:"string") => {
+export const NBLayout = (NBarr: JSX.Element[], style?: React.CSSProperties,className?:string) => {
 
     return (
         <div className={className??"nb-root" }
