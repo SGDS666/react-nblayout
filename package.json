@@ -1,0 +1,25 @@
+{
+  "name": "react-nblayout",
+  "version": "1.2.9",
+  "description": "",
+  "main": "./dist/NBlayout.js",
+  "types":"./dist/NBlayout.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "TypeScript",
+    "javascript",
+    "css",
+    "layout",
+    "nb",
+    "react",
+    "easy",
+    "style"
+],
+  "author": "sgds",
+  "license": "ISC",
+  "dependencies": {},
+  "files":["dist/"]
+  
+}
