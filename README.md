@@ -222,6 +222,22 @@ you can refer to the writing method in the demo or directly add flex grow: 0 in 
     row([<Div />, <Div />, <Div />],{},{flexGrow:0}),
 ```
 
+
+### 通过css调整col row 基础样式
+如果通过NBlayout组装使用
+可使用css选择器 修改row 已经col 的基础样式规则 
+
+If assembled and used by NBlayout
+CSS selectors can be used to modify the underlying style rules for row already cols 
+```css
+.nb-root .nb-row{
+
+}
+.nb-root .nb-col{
+
+}
+```
+
 ### 自定义组件规范
 
 如果自定义组件使用第三个参数item样式后未生效 请注意是否接收style属性 并赋值给组件内的div
