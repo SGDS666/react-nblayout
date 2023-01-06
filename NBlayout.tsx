@@ -15,8 +15,6 @@ export const row = (arr: JSX.Element[], style?: React.CSSProperties, itemstyle?:
 }
 
 
-
-
 const rowHandle = (row: JSX.Element[], style?: React.CSSProperties, itemstyle?: React.CSSProperties) => {
     return (
         <div
