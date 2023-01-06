@@ -119,14 +119,14 @@ const Demo = () => {
 
 
 
-## 文档 document
+# 文档 document
 ### NBLayout 参数类型 Parameter Type
 ```typescript
   NBLayout(NBarr: JSX.Element[], style?: React.CSSProperties | undefined): JSX.Element
   
 ```
-### 注解 annotation 
-#### NBlayout 基于flex布局  Based on flex layout
+
+## NBlayout 基于flex布局  Based on flex layout
 接收2个参数  第二个为可选值
 
 第一个参数是组件列表 只有一层 虽然看上去是多维数组 其实row col两个函数最终返回都都是单个组件
@@ -165,7 +165,7 @@ type prompt
 
 It should be noted that the component array received by NBlayout row col will automatically fill in keys, 
 so whether you write one by one or use arr.map, you do not need to write keys=
-### row&&col 
+## row&&col 
 ``` typescript
     row(arr: JSX.Element[], style?: React.CSSProperties | undefined, itemstyle?: React.CSSProperties | undefined): JSX.Element
     col(arr: JSX.Element[], style?: React.CSSProperties | undefined, itemstyle?: React.CSSProperties | undefined): JSX.Element
@@ -223,12 +223,14 @@ you can refer to the writing method in the demo or directly add flex grow: 0 in 
 ```
 
 
-### 通过css调整col row 基础样式
+## 通过css调整col row 基础样式
 如果通过NBlayout组装使用
-可使用css选择器 修改row 已经col 的基础样式规则 
+可使用以下方式的css选择器 修改row 以及col 的基础样式规则 
+如果是单独使用 col 或者 row 请找一个根结点类名或id替换 .nb-root
 
-If assembled and used by NBlayout
-CSS selectors can be used to modify the underlying style rules for row already cols 
+If used by NBlayout assembly
+The basic style rules of row and col can be modified using the css selector in the following ways
+If col or row is used alone, please find a root node class name or id to replace. nb root
 ```css
 .nb-root .nb-row{
 
@@ -238,7 +240,7 @@ CSS selectors can be used to modify the underlying style rules for row already c
 }
 ```
 
-### 自定义组件规范
+## 自定义组件规范
 
 如果自定义组件使用第三个参数item样式后未生效 请注意是否接收style属性 并赋值给组件内的div
 可参考demo中的Div组件
